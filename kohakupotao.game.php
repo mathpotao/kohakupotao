@@ -95,15 +95,13 @@ class kohakupotao extends Table
        
         // Create cards
         $cards = array ();
-        foreach ( $this->card_types as $card_type_id => $card_type ) {
+        foreach ( $this->types as $type_id => $type ) {
             // koi, feature
-            for ($value = 1; $value <= 9; $value ++) {
-                //  1, 2, 3, ... 9
-                $cards [] = array ('type' => $card_type_id,'type_arg' => $value,'nbr' => 1 );
+            for ($value = 0; $value <= 11; $value ++) {
+                //  0, 1, 2, ... 11
+                $cards [] = array ('type' => $type_id,'type_arg' => $value,'nbr' => 1 );
             }
         }
-
-
         
         $this->cards->createCards( $cards, 'deck' );
 

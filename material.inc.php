@@ -32,10 +32,10 @@ $this->card_types = array(
 
 */
 
-$this->card_types = array(
-  1 => array( 'name' => clienttranslate('koi'),
+$this->types = array(
+  0 => array( 'name' => clienttranslate('koi'),
               'nametr' => self::_('koi') ),
-  2 => array( 'name' => clienttranslate('feature'),
+  1 => array( 'name' => clienttranslate('feature'),
               'nametr' => self::_('feature') )
 );
 
