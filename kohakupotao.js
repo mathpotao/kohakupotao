@@ -81,7 +81,7 @@ function (dojo, declare) {
                 }
             }
 
-            this.pondMat.addToStockWithId( this.getCardUniqueId( 0, 1 ), 12 );
+            
  
             // Setup game notifications to handle (see "setupNotifications" method below)
             this.setupNotifications();

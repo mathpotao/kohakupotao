@@ -133,6 +133,9 @@ class kohakupotao extends Table
   
         // TODO: Gather all information about current game situation (visible by player $current_player_id).
   
+        // Cards on pond_mat
+        //$result['pondmat'] = $this->cards->getCardsInLocation( 'pondmat' );
+
         return $result;
     }
 
