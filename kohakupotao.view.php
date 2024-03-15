@@ -42,6 +42,22 @@ class view_kohakupotao_kohakupotao extends game_view
 
         /*********** Place your code below:  ************/
 
+        $this->page->begin_block( "kohakupotao_kohakupotao", "square" );
+        
+        $hor_scale = 46;
+        $ver_scale = 48;
+        for( $x=1; $x<=4; $x++ )
+        {
+            for( $y=1; $y<=3; $y++ )
+            {
+                $this->page->insert_block( "square", array(
+                    'X' => $x,
+                    'Y' => $y,
+                    'LEFT' => round( ($x-1)*$hor_scale+24 ),
+                    'TOP' => round( ($y-1)*$ver_scale+60 )
+                ) );
+            }        
+        }
 
         /*
         

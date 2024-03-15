@@ -33,3 +33,14 @@
 -- Example 2: add a custom field to the standard "player" table
 -- ALTER TABLE `player` ADD `player_my_custom_field` INT UNSIGNED NOT NULL DEFAULT '0';
 
+CREATE TABLE IF NOT EXISTS `tile` (
+  `tile_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `tile_type` varchar(16) NOT NULL,
+  `tile_type_arg` int(11) NOT NULL,
+  `tile_location` varchar(16) NOT NULL,
+  `tile_location_arg` int(11) NOT NULL,
+  PRIMARY KEY (`tile_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+ -- add info about first player
+ ALTER TABLE `player` ADD `player_first` BOOLEAN NOT NULL DEFAULT '0';

@@ -39,7 +39,11 @@ class kohakupotao extends Table
             //    "my_first_game_variant" => 100,
             //    "my_second_game_variant" => 101,
             //      ...
-        ) );        
+        ) );
+        
+        $this->cards = self::getNew( "module.common.deck" );
+        $this->cards->init( "card" );
+
 	}
 	
     protected function getGameName( )
@@ -89,6 +93,19 @@ class kohakupotao extends Table
 
         // TODO: setup the initial game situation here
        
+        // Create cards
+        $cards = array ();
+        foreach ( $this->card_types as $card_type_id => $card_type ) {
+            // koi, feature
+            for ($value = 1; $value <= 9; $value ++) {
+                //  1, 2, 3, ... 9
+                $cards [] = array ('type' => $card_type_id,'type_arg' => $value,'nbr' => 1 );
+            }
+        }
+
+
+        
+        $this->cards->createCards( $cards, 'deck' );
 
         // Activate first player (which is in general a good idea :) )
         $this->activeNextPlayer();

@@ -18,12 +18,15 @@
 define([
     "dojo","dojo/_base/declare",
     "ebg/core/gamegui",
-    "ebg/counter"
+    "ebg/counter",
+    "ebg/stock"  
 ],
 function (dojo, declare) {
     return declare("bgagame.kohakupotao", ebg.core.gamegui, {
         constructor: function(){
             console.log('kohakupotao constructor');
+            this.cardwidth = 40;
+            this.cardheight = 40;  
               
             // Here, you can init the global variables of your user interface
             // Example:

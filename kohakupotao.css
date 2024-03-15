@@ -67,6 +67,23 @@
     }
 */
 
+#pond_mat {
+    width: 220px;
+    height: 220px;
+    background-image: url('img/pond_mat.jpg');
+    position: relative;
+ }
+
+
+
+.square {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background-image: url('img/tiles.jpg');
+}
+
+
 
 
 
