@@ -61,27 +61,23 @@ function (dojo, declare) {
             
             // TODO: Set up your game interface here, according to "gamedatas"
             
-            // pondMat
-            this.pondMat = new ebg.stock(); // new stock object for pond_mat
-            this.pondMat.create( this, $('pond_mat'), this.cardwidth, this.cardheight );
+            // Exemple1
+            this.exemple1 = new ebg.stock(); // new stock object for exemple1
+            this.exemple1.create( this, $('ex1'), this.cardwidth, this.cardheight );
 
-            this.pondMat.image_items_per_row = 6; // 6 images per row
-            
-            dojo.connect( this.myStockControl, 'onChangeSelection', this, 'onPondMatSelectionChanged' );
+            this.exemple1.image_items_per_row = 6; // 13 images per row
 
 
-            // Create card types:
-            for( var type=0;type<=1;type++ )
-            {
-                for( var value=0;value<=11;value++ )
-                {
+            // Create cards types:
+            for (var type = 0; type <= 1; type++) {
+                for (var value = 0; value <= 11; value++) {
                     // Build card type id
-                    var card_type_id = this.getCardUniqueId( type, value );
-                    this.pondMat.addItemType( card_type_id, card_type_id, g_gamethemeurl+'img/tiles.jpg', card_type_id );
+                    var card_type_id = this.getCardUniqueId(type, value);
+                    this.exemple1.addItemType(card_type_id, card_type_id, g_gamethemeurl + 'img/tiles.jpg', card_type_id);
                 }
             }
 
-            
+            //this.exemple1.addToStockWithId( this.getCardUniqueId( 1, 1 ), 13 );
  
             // Setup game notifications to handle (see "setupNotifications" method below)
             this.setupNotifications();
@@ -187,6 +183,8 @@ function (dojo, declare) {
             return type * 12 + value;
         },
 
+        
+
         ///////////////////////////////////////////////////
         //// Player's action
         
@@ -235,24 +233,7 @@ function (dojo, declare) {
         
         */
 
-        onPondMatSelectionChanged: function() {
-            var items = this.pondMat.getSelectedItems();
-
-            if (items.length > 0) {
-                if (this.checkAction('playCard', true)) {
-                    // Can play a card
-
-                    var card_id = items[0].id;
-                    console.log("on playCard "+card_id);
-
-                    this.pondMat.unselectAll();
-                } else if (this.checkAction('giveCards')) {
-                    // Can give cards => let the player select some cards
-                } else {
-                    this.pondMat.unselectAll();
-                }
-            }
-        },
+        
 
         
         ///////////////////////////////////////////////////

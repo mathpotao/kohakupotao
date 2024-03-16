@@ -105,6 +105,16 @@ class kohakupotao extends Table
         
         $this->cards->createCards( $cards, 'deck' );
 
+        // Shuffle deck
+        $this->cards->shuffle('deck');
+
+        // Deal 5 cards to pondmat
+        $players = self::loadPlayersBasicInfos();
+        foreach ( $players as $player_id => $player ) {
+            $cards = $this->cards->pickCards(1, 'deck', 'square_1_1');
+        } 
+         
+
         // Activate first player (which is in general a good idea :) )
         $this->activeNextPlayer();
 
@@ -134,7 +144,7 @@ class kohakupotao extends Table
         // TODO: Gather all information about current game situation (visible by player $current_player_id).
   
         // Cards on pond_mat
-        //$result['pondmat'] = $this->cards->getCardsInLocation( 'pondmat' );
+        $result['pondmat'] = $this->cards->getCardsInLocation( 'pondmat' );
 
         return $result;
     }
